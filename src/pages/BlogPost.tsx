@@ -119,7 +119,7 @@ export default function BlogPost() {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-brand-yellow text-foreground font-bold px-7 py-3.5 rounded-xl text-sm hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
+            className="btn-cta-secondary"
           >
             Registrarme gratis →
           </a>
