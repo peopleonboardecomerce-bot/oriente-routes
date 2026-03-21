@@ -1,21 +1,14 @@
 import { Target, Eye, CheckCircle } from "lucide-react";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
-const cards = [
-  {
-    icon: Target,
-    title: "Nuestra Misión",
-    color: "brand-blue",
-    text: "Facilitar la movilidad en Sucre mediante tecnología accesible, impulsando la economía local y conectando comunidades.",
-  },
-  {
-    icon: Eye,
-    title: "Nuestra Visión",
-    color: "brand-teal",
-    text: "Ser el estándar de transporte digital en las regiones que otros olvidan, devolviendo la tranquilidad y seguridad a cada traslado.",
-  },
+const KEYS = ["mision", "vision", "why_us"];
+
+const cardMeta = [
+  { icon: Target, title: "Nuestra Misión", key: "mision", color: "brand-blue" },
+  { icon: Eye,    title: "Nuestra Visión", key: "vision", color: "brand-teal" },
 ];
 
-const reasons = [
+const reasonsFallback = [
   "Conductores verificados con documentos actualizados.",
   "Precios justos y transparentes, sin sorpresas.",
   "Funciona desde cualquier celular con internet.",
@@ -23,6 +16,8 @@ const reasons = [
 ];
 
 export default function MisionVision() {
+  const { settings, loading } = useSiteSettings(KEYS);
+
   return (
     <section id="mision" className="section-padding bg-white">
       <div className="container mx-auto px-4">
@@ -34,26 +29,35 @@ export default function MisionVision() {
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-14">
-          {cards.map(({ icon: Icon, title, color, text }) => (
+          {cardMeta.map(({ icon: Icon, title, key, color }) => (
             <div key={title} className="card-feature group">
               <div className={`icon-wrapper bg-${color}/10 text-${color} mb-5`}>
                 <Icon size={26} strokeWidth={1.8} />
               </div>
               <h3 className="font-display text-xl font-semibold text-foreground mb-3">{title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{text}</p>
+              {loading ? (
+                <div className="h-16 bg-muted rounded-lg animate-pulse" />
+              ) : (
+                <p className="text-muted-foreground leading-relaxed">{settings[key]}</p>
+              )}
             </div>
           ))}
         </div>
 
         {/* Why us */}
         <div className="max-w-3xl mx-auto bg-soft-blue rounded-2xl p-8">
-          <p className="text-center text-foreground/80 text-base md:text-lg leading-relaxed mb-6">
-            Solucionamos la incertidumbre del transporte local verificado, ofreciendo
-            <strong className="text-brand-blue"> precios justos y conductores evaluados</strong>, todo
-            desde una interfaz web simple que no consume la memoria de tu teléfono.
-          </p>
+          {loading ? (
+            <div className="space-y-2">
+              <div className="h-5 bg-muted/60 rounded animate-pulse w-full" />
+              <div className="h-5 bg-muted/60 rounded animate-pulse w-4/5 mx-auto" />
+            </div>
+          ) : (
+            <p className="text-center text-foreground/80 text-base md:text-lg leading-relaxed mb-6">
+              {settings["why_us"]}
+            </p>
+          )}
           <ul className="grid sm:grid-cols-2 gap-3">
-            {reasons.map((r) => (
+            {reasonsFallback.map((r) => (
               <li key={r} className="flex items-start gap-2.5 text-sm text-foreground/75">
                 <CheckCircle size={18} className="text-brand-teal shrink-0 mt-0.5" />
                 {r}
