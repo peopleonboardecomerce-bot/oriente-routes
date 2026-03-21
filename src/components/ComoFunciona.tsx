@@ -1,53 +1,31 @@
 import { useState } from "react";
 import { UserCheck, MapPin, Shield, FileText, Power, DollarSign } from "lucide-react";
+import { useSiteSettings } from "@/hooks/useSiteSettings";
 
 const APP_URL = "https://app.orientego.com";
 
-const passengerSteps = [
-  {
-    icon: UserCheck,
-    step: "01",
-    title: "Regístrate en la Web",
-    desc: "Crea tu cuenta en segundos. Solo necesitas tu nombre, teléfono y una contraseña.",
-  },
-  {
-    icon: MapPin,
-    step: "02",
-    title: "Solicita tu viaje",
-    desc: "Indica tu origen y destino. Recibirás conductores disponibles cerca de ti.",
-  },
-  {
-    icon: Shield,
-    step: "03",
-    title: "Viaja seguro",
-    desc: "Tu conductor está verificado y evaluado. Viaja con total tranquilidad.",
-  },
+const KEYS = [
+  "paso_pasajero_1", "paso_pasajero_2", "paso_pasajero_3",
+  "paso_conductor_1", "paso_conductor_2", "paso_conductor_3",
 ];
 
-const driverSteps = [
-  {
-    icon: FileText,
-    step: "01",
-    title: "Regístrate y sube documentos",
-    desc: "Crea tu perfil de conductor y sube tus documentos para verificación.",
-  },
-  {
-    icon: Power,
-    step: "02",
-    title: "Actívate cuando quieras",
-    desc: "Tú decides cuándo trabajar. Activa o desactiva tu disponibilidad libremente.",
-  },
-  {
-    icon: DollarSign,
-    step: "03",
-    title: "Gana con tu vehículo",
-    desc: "Genera ingresos con lo que ya tienes. Pagos claros y transparentes.",
-  },
+const passengerMeta = [
+  { icon: UserCheck, step: "01", title: "Regístrate en la Web",       key: "paso_pasajero_1" },
+  { icon: MapPin,    step: "02", title: "Solicita tu viaje",           key: "paso_pasajero_2" },
+  { icon: Shield,    step: "03", title: "Viaja seguro",               key: "paso_pasajero_3" },
+];
+
+const driverMeta = [
+  { icon: FileText,   step: "01", title: "Regístrate y sube documentos", key: "paso_conductor_1" },
+  { icon: Power,      step: "02", title: "Actívate cuando quieras",       key: "paso_conductor_2" },
+  { icon: DollarSign, step: "03", title: "Gana con tu vehículo",          key: "paso_conductor_3" },
 ];
 
 export default function ComoFunciona() {
   const [tab, setTab] = useState<"pasajero" | "conductor">("pasajero");
-  const steps = tab === "pasajero" ? passengerSteps : driverSteps;
+  const { settings, loading } = useSiteSettings(KEYS);
+
+  const steps = tab === "pasajero" ? passengerMeta : driverMeta;
   const ctaText = tab === "pasajero" ? "Registrarme como Pasajero" : "Registrarme como Conductor";
 
   return (
@@ -80,7 +58,7 @@ export default function ComoFunciona() {
 
         {/* Steps */}
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
-          {steps.map(({ icon: Icon, step, title, desc }, i) => (
+          {steps.map(({ icon: Icon, step, title, key }, i) => (
             <div key={step} className="relative flex flex-col items-center text-center p-6">
               {/* Connector line */}
               {i < steps.length - 1 && (
@@ -93,7 +71,11 @@ export default function ComoFunciona() {
                 </span>
               </div>
               <h3 className="font-display text-base font-semibold text-foreground mb-2">{title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+              {loading ? (
+                <div className="h-12 w-full bg-muted rounded-lg animate-pulse" />
+              ) : (
+                <p className="text-sm text-muted-foreground leading-relaxed">{settings[key]}</p>
+              )}
             </div>
           ))}
         </div>
