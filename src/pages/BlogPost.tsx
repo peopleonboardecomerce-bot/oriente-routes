@@ -100,7 +100,7 @@ export default function BlogPost() {
             prose-strong:text-foreground
             prose-ul:text-foreground/80
             prose-li:marker:text-brand-blue
-            prose-blockquote:border-l-brand-blue prose-blockquote:bg-soft-blue
+            prose-blockquote:border-l-[hsl(var(--brand-blue))] prose-blockquote:bg-[hsl(var(--soft-blue))]
             prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-blockquote:pr-4
             prose-blockquote:not-italic prose-blockquote:text-foreground/70"
           dangerouslySetInnerHTML={{ __html: post.content }}
