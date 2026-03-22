@@ -1,6 +1,6 @@
 import heroBg from "@/assets/hero-bg.jpg";
 
-const APP_URL = "https://app.orientego.com"; // placeholder
+const APP_URL = "https://app.orientego.com";
 
 export default function HeroSection() {
   return (
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
         <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 drop-shadow-md">
           Tu viaje seguro y confiable<br className="hidden sm:block" />
-          <span className="text-brand-yellow"> en el Oriente Venezolano.</span>
+          <span className="text-brand-teal"> en el Oriente Venezolano.</span>
         </h1>
 
         <p className="text-base sm:text-lg md:text-xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -61,7 +61,7 @@ export default function HeroSection() {
             { val: "24/7", label: "Disponible" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col items-center">
-              <span className="font-display text-2xl sm:text-3xl font-bold text-brand-yellow">{s.val}</span>
+              <span className="font-display text-2xl sm:text-3xl font-bold text-brand-teal">{s.val}</span>
               <span className="text-white/70 text-xs sm:text-sm mt-1">{s.label}</span>
             </div>
           ))}

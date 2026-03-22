@@ -23,7 +23,7 @@ export default function SiteFooter() {
   return (
     <footer className="bg-footer-dark text-white">
       {/* CTA band */}
-      <div className="bg-brand-blue py-10">
+      <div className="bg-brand-navy py-10">
         <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white/70 text-sm">¿Listo para tu próximo viaje?</p>
@@ -35,7 +35,7 @@ export default function SiteFooter() {
             href={APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center gap-2 bg-brand-yellow text-foreground font-bold px-6 py-3 rounded-xl hover:bg-yellow-400 transition-colors text-sm shadow-md"
+            className="btn-cta shrink-0"
           >
             Entrar a la App →
           </a>
@@ -47,11 +47,11 @@ export default function SiteFooter() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-blue text-white">
+            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-teal text-white">
               <Zap size={16} strokeWidth={2.5} />
             </span>
             <span className="font-display text-xl font-bold">
-              Oriente<span className="text-brand-yellow">Go</span>
+              Oriente<span className="text-brand-teal">Go</span>
             </span>
           </div>
           <p className="text-white/55 text-sm leading-relaxed max-w-xs">
@@ -65,7 +65,7 @@ export default function SiteFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-blue transition-colors flex items-center justify-center"
+                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-teal transition-colors flex items-center justify-center"
               >
                 <Icon size={16} />
               </a>
@@ -81,7 +81,7 @@ export default function SiteFooter() {
               <li key={l.href}>
                 <button
                   onClick={() => handleNav(l.href)}
-                  className="text-white/55 hover:text-brand-yellow text-sm transition-colors"
+                  className="text-white/55 hover:text-brand-teal text-sm transition-colors"
                 >
                   {l.label}
                 </button>
@@ -95,15 +95,15 @@ export default function SiteFooter() {
           <h4 className="font-semibold text-white/90 mb-4 text-sm uppercase tracking-wider">Contacto</h4>
           <ul className="space-y-3">
             <li className="flex items-start gap-2.5 text-sm text-white/55">
-              <MapPin size={15} className="shrink-0 mt-0.5 text-brand-yellow" />
+              <MapPin size={15} className="shrink-0 mt-0.5 text-brand-teal" />
               Yaguaraparo, Estado Sucre, Venezuela
             </li>
             <li className="flex items-center gap-2.5 text-sm text-white/55">
-              <Mail size={15} className="shrink-0 text-brand-yellow" />
+              <Mail size={15} className="shrink-0 text-brand-teal" />
               hola@orientego.com
             </li>
             <li className="flex items-center gap-2.5 text-sm text-white/55">
-              <Phone size={15} className="shrink-0 text-brand-yellow" />
+              <Phone size={15} className="shrink-0 text-brand-teal" />
               +58 000-000-0000
             </li>
           </ul>
