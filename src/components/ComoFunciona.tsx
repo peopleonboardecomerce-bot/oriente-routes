@@ -46,7 +46,7 @@ export default function ComoFunciona() {
                 onClick={() => setTab(t)}
                 className={`px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 capitalize ${
                   tab === t
-                    ? "bg-brand-blue text-white shadow-md"
+                    ? "bg-brand-navy text-white shadow-md"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -62,11 +62,11 @@ export default function ComoFunciona() {
             <div key={step} className="relative flex flex-col items-center text-center p-6">
               {/* Connector line */}
               {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 left-[calc(50%+3rem)] right-0 h-px border-t-2 border-dashed border-brand-blue/20 z-0" />
+                <div className="hidden md:block absolute top-10 left-[calc(50%+3rem)] right-0 h-px border-t-2 border-dashed border-brand-navy/20 z-0" />
               )}
-              <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-blue/10 flex items-center justify-center mb-4">
-                <Icon size={28} className="text-brand-blue" strokeWidth={1.7} />
-                <span className="absolute -top-2 -right-2 w-6 h-6 bg-brand-yellow rounded-full text-xs font-bold text-foreground flex items-center justify-center">
+              <div className="relative z-10 w-16 h-16 rounded-2xl bg-brand-teal/10 flex items-center justify-center mb-4">
+                <Icon size={28} className="text-brand-teal" strokeWidth={1.7} />
+                <span className="absolute -top-2 -right-2 w-6 h-6 bg-brand-teal rounded-full text-xs font-bold text-white flex items-center justify-center">
                   {i + 1}
                 </span>
               </div>

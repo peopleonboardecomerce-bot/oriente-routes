@@ -15,10 +15,10 @@ interface Post {
 }
 
 const categoryColors: Record<string, string> = {
-  Tecnología: "bg-brand-blue/10 text-brand-blue",
-  Comunidad: "bg-brand-teal/10 text-brand-teal",
-  Seguridad: "bg-brand-yellow/20 text-amber-700",
-  General: "bg-muted text-muted-foreground",
+  Tecnología: "bg-brand-teal/10 text-brand-teal",
+  Comunidad:  "bg-brand-brown/10 text-brand-brown",
+  Seguridad:  "bg-brand-green/10 text-brand-green",
+  General:    "bg-muted text-muted-foreground",
 };
 
 const PLACEHOLDER = "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=800&q=80";
@@ -95,13 +95,13 @@ export default function BlogHighlights() {
                   >
                     {post.category ?? "General"}
                   </span>
-                  <h3 className="font-display text-base font-semibold text-foreground mt-3 mb-2 leading-snug group-hover:text-brand-blue transition-colors">
+                  <h3 className="font-display text-base font-semibold text-foreground mt-3 mb-2 leading-snug group-hover:text-brand-teal transition-colors">
                     {post.title}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center gap-1.5 mt-4 text-brand-blue text-sm font-medium">
+                  <div className="flex items-center gap-1.5 mt-4 text-brand-teal text-sm font-medium">
                     Leer artículo <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>

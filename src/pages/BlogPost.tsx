@@ -20,10 +20,10 @@ interface Post {
 }
 
 const categoryColors: Record<string, string> = {
-  Tecnología: "bg-brand-blue/10 text-brand-blue",
-  Comunidad: "bg-brand-teal/10 text-brand-teal",
-  Seguridad: "bg-brand-yellow/20 text-amber-700",
-  General: "bg-muted text-muted-foreground",
+  Tecnología: "bg-brand-teal/10 text-brand-teal",
+  Comunidad:  "bg-brand-brown/10 text-brand-brown",
+  Seguridad:  "bg-brand-green/10 text-brand-green",
+  General:    "bg-muted text-muted-foreground",
 };
 
 const PLACEHOLDER = "https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=1200&q=80";
@@ -46,7 +46,7 @@ function formatDate(dateStr: string | null): string {
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const [post, setPost] = useState<Post | null | undefined>(undefined); // undefined = loading
+  const [post, setPost] = useState<Post | null | undefined>(undefined);
   const [related, setRelated] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -60,7 +60,6 @@ export default function BlogPost() {
       .then(({ data }) => {
         setPost(data ?? null);
         if (data) {
-          // Fetch 2 related posts from same category (excluding current)
           supabase
             .from("posts")
             .select("id, slug, title, excerpt, category, cover_url, published_at, author, content")
@@ -124,7 +123,7 @@ export default function BlogPost() {
         {/* Back button */}
         <button
           onClick={() => navigate("/")}
-          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-blue transition-colors mb-6 group"
+          className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-brand-teal transition-colors mb-6 group"
         >
           <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-0.5" />
           Volver al inicio
@@ -145,16 +144,16 @@ export default function BlogPost() {
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground border-b border-border pb-6">
             {post.published_at && (
               <div className="flex items-center gap-1.5">
-                <Calendar size={14} className="text-brand-blue" />
+                <Calendar size={14} className="text-brand-teal" />
                 <span>{formatDate(post.published_at)}</span>
               </div>
             )}
             <div className="flex items-center gap-1.5">
-              <Clock size={14} className="text-brand-blue" />
+              <Clock size={14} className="text-brand-teal" />
               <span>{estimateReadTime(post.content)} de lectura</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-6 h-6 rounded-full bg-brand-blue flex items-center justify-center">
+              <span className="w-6 h-6 rounded-full bg-brand-navy flex items-center justify-center">
                 <Zap size={11} className="text-white" />
               </span>
               <span>{post.author ?? "Equipo OrienteGo"}</span>
@@ -168,18 +167,18 @@ export default function BlogPost() {
             prose-headings:font-display prose-headings:text-foreground prose-headings:font-bold
             prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
             prose-p:text-foreground/80 prose-p:leading-relaxed
-            prose-a:text-brand-blue prose-a:no-underline hover:prose-a:underline
+            prose-a:text-brand-teal prose-a:no-underline hover:prose-a:underline
             prose-strong:text-foreground
             prose-ul:text-foreground/80
-            prose-li:marker:text-brand-blue
-            prose-blockquote:border-l-[hsl(var(--brand-blue))] prose-blockquote:bg-[hsl(var(--soft-blue))]
+            prose-li:marker:text-brand-teal
+            prose-blockquote:border-l-[hsl(var(--brand-teal))] prose-blockquote:bg-[hsl(var(--soft-bg))]
             prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-blockquote:pr-4
             prose-blockquote:not-italic prose-blockquote:text-foreground/70"
           dangerouslySetInnerHTML={{ __html: post.content ?? "" }}
         />
 
         {/* CTA Banner */}
-        <div className="mt-14 rounded-2xl bg-brand-blue p-8 text-white text-center">
+        <div className="mt-14 rounded-2xl bg-brand-navy p-8 text-white text-center">
           <p className="text-white/70 text-sm mb-1">¿Listo para el siguiente paso?</p>
           <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4">
             Empieza a usar nuestra Web App ahora.
@@ -215,10 +214,10 @@ export default function BlogPost() {
                     >
                       {rp.category ?? "General"}
                     </span>
-                    <h3 className="font-display text-sm font-semibold text-foreground mt-2 mb-1 leading-snug group-hover:text-brand-blue transition-colors line-clamp-2">
+                    <h3 className="font-display text-sm font-semibold text-foreground mt-2 mb-1 leading-snug group-hover:text-brand-teal transition-colors line-clamp-2">
                       {rp.title}
                     </h3>
-                    <div className="flex items-center gap-1 mt-2 text-brand-blue text-xs font-medium">
+                    <div className="flex items-center gap-1 mt-2 text-brand-teal text-xs font-medium">
                       Leer artículo <ArrowRight size={12} className="transition-transform group-hover:translate-x-0.5" />
                     </div>
                   </div>

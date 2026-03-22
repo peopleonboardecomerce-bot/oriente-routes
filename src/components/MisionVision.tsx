@@ -4,7 +4,7 @@ import { useSiteSettings } from "@/hooks/useSiteSettings";
 const KEYS = ["mision", "vision", "why_us"];
 
 const cardMeta = [
-  { icon: Target, title: "Nuestra Misión", key: "mision", color: "brand-blue" },
+  { icon: Target, title: "Nuestra Misión", key: "mision", color: "brand-navy" },
   { icon: Eye,    title: "Nuestra Visión", key: "vision", color: "brand-teal" },
 ];
 
@@ -45,7 +45,7 @@ export default function MisionVision() {
         </div>
 
         {/* Why us */}
-        <div className="max-w-3xl mx-auto bg-soft-blue rounded-2xl p-8">
+        <div className="max-w-3xl mx-auto bg-soft-bg rounded-2xl p-8">
           {loading ? (
             <div className="space-y-2">
               <div className="h-5 bg-muted/60 rounded animate-pulse w-full" />
@@ -59,7 +59,7 @@ export default function MisionVision() {
           <ul className="grid sm:grid-cols-2 gap-3">
             {reasonsFallback.map((r) => (
               <li key={r} className="flex items-start gap-2.5 text-sm text-foreground/75">
-                <CheckCircle size={18} className="text-brand-teal shrink-0 mt-0.5" />
+                <CheckCircle size={18} className="text-brand-green shrink-0 mt-0.5" />
                 {r}
               </li>
             ))}
