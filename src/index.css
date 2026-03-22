@@ -1,94 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Design System – OrienteGo ─────────────────────────────────── */
+/* ─── Design System – OrienteGo "Modern Coastal" ────────────────── */
 
 @layer base {
   :root {
     /* Core palette */
-    --background: 210 30% 97%;
-    --foreground: 217 40% 11%;
+    --background: 0 0% 98%;
+    --foreground: 210 38% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 217 40% 11%;
+    --card-foreground: 210 38% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 217 40% 11%;
+    --popover-foreground: 210 38% 17%;
 
-    /* Deep trust blue */
-    --primary: 214 75% 30%;
+    /* Deep Navy Blue (#1A2B3C) */
+    --primary: 210 38% 17%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 25% 92%;
-    --secondary-foreground: 217 40% 11%;
+    --secondary: 188 30% 92%;
+    --secondary-foreground: 210 38% 17%;
 
-    --muted: 210 25% 92%;
-    --muted-foreground: 215 18% 48%;
+    --muted: 210 15% 94%;
+    --muted-foreground: 210 18% 50%;
 
-    --accent: 210 25% 92%;
-    --accent-foreground: 217 40% 11%;
+    --accent: 188 30% 92%;
+    --accent-foreground: 210 38% 17%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 214 75% 30%;
+    --border: 210 15% 88%;
+    --input: 210 15% 88%;
+    --ring: 188 53% 50%;
 
     --radius: 0.75rem;
 
-    /* Brand tokens */
-    --brand-blue: 214 75% 30%;
-    --brand-blue-light: 214 75% 45%;
-    --brand-teal: 178 62% 32%;
-    --brand-yellow: 45 98% 52%;
+    /* ── Brand tokens ───────────────────────────── */
+    /* Deep Navy Blue  #1A2B3C */
+    --brand-navy: 210 38% 17%;
+    /* Turquoise       #3CB0C1 */
+    --brand-teal: 188 53% 50%;
+    /* Earthy Cocoa    #7A5B43 */
+    --brand-brown: 26 29% 37%;
+    /* Grass Green     #5FB14F */
+    --brand-green: 110 38% 50%;
 
     /* Misc */
-    --footer-dark: 218 40% 10%;
-    --soft-blue: 214 60% 97%;
-    --hero-overlay-start: 218 60% 10%;
+    --footer-dark: 210 40% 11%;
+    --soft-bg: 210 40% 97%;
+    --hero-overlay-start: 210 50% 10%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 210 38% 17%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 188 53% 50%;
   }
 
   .dark {
-    --background: 217 40% 8%;
-    --foreground: 210 30% 96%;
-    --card: 217 35% 12%;
-    --card-foreground: 210 30% 96%;
-    --popover: 217 35% 12%;
-    --popover-foreground: 210 30% 96%;
-    --primary: 214 70% 55%;
+    --background: 210 38% 8%;
+    --foreground: 210 20% 95%;
+    --card: 210 35% 11%;
+    --card-foreground: 210 20% 95%;
+    --popover: 210 35% 11%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 188 53% 55%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 217 30% 18%;
-    --secondary-foreground: 210 30% 96%;
-    --muted: 217 30% 18%;
-    --muted-foreground: 215 20% 62%;
-    --accent: 217 30% 18%;
-    --accent-foreground: 210 30% 96%;
+    --secondary: 210 30% 18%;
+    --secondary-foreground: 210 20% 95%;
+    --muted: 210 30% 18%;
+    --muted-foreground: 210 20% 62%;
+    --accent: 210 30% 18%;
+    --accent-foreground: 210 20% 95%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 210 30% 96%;
-    --border: 217 30% 18%;
-    --input: 217 30% 18%;
-    --ring: 214 70% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --destructive-foreground: 210 20% 95%;
+    --border: 210 30% 18%;
+    --input: 210 30% 18%;
+    --ring: 188 53% 50%;
+    --sidebar-background: 210 38% 8%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 188 53% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 30% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 210 30% 18%;
+    --sidebar-ring: 188 53% 50%;
   }
 }
 
@@ -97,21 +99,21 @@
   html { scroll-behavior: smooth; }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Open Sans', system-ui, sans-serif;
   }
   h1, h2, h3, h4 {
-    font-family: 'Sora', 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
 }
 
 @layer components {
   /* ── Buttons ─────────────────────────────────── */
   .btn-cta {
-    @apply inline-flex items-center gap-2 bg-brand-yellow text-foreground font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-yellow-400 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 bg-brand-teal text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-cta-hero {
-    @apply inline-flex items-center justify-center gap-2 bg-brand-yellow text-foreground font-bold px-7 py-4 rounded-2xl text-base hover:bg-yellow-400 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 bg-brand-teal text-white font-bold px-7 py-4 rounded-2xl text-base hover:opacity-90 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0;
   }
 
   .btn-ghost-hero {
@@ -119,19 +121,19 @@
   }
 
   .btn-cta-secondary {
-    @apply inline-flex items-center gap-2 bg-brand-blue text-white font-bold px-7 py-3.5 rounded-xl text-sm hover:bg-brand-blue-light transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 bg-brand-navy text-white font-bold px-7 py-3.5 rounded-xl text-sm hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
 
   .btn-cta-conductor {
-    @apply bg-brand-teal hover:bg-teal-600;
+    @apply bg-brand-green hover:opacity-90;
   }
 
   /* ── Nav ─────────────────────────────────────── */
   .bg-nav {
-    background-color: hsl(var(--card) / 0.92);
+    background-color: hsl(var(--card) / 0.95);
   }
   .shadow-nav {
-    box-shadow: 0 1px 24px hsl(var(--brand-blue) / 0.10);
+    box-shadow: 0 1px 24px hsl(var(--brand-navy) / 0.12);
   }
 
   /* ── Sections ────────────────────────────────── */
@@ -140,7 +142,7 @@
   }
 
   .section-label {
-    @apply inline-block text-xs font-bold uppercase tracking-[0.18em] text-brand-blue mb-3;
+    @apply inline-block text-xs font-bold uppercase tracking-[0.18em] text-brand-teal mb-3;
   }
 
   .section-title {
@@ -165,32 +167,38 @@
   .bg-hero-overlay {
     background: linear-gradient(
       to bottom,
-      hsl(var(--hero-overlay-start) / 0.70) 0%,
-      hsl(var(--hero-overlay-start) / 0.50) 40%,
-      hsl(var(--hero-overlay-start) / 0.75) 100%
+      hsl(var(--hero-overlay-start) / 0.72) 0%,
+      hsl(var(--hero-overlay-start) / 0.52) 40%,
+      hsl(var(--hero-overlay-start) / 0.78) 100%
     );
   }
 
-  .bg-soft-blue {
-    background-color: hsl(var(--soft-blue));
+  .bg-soft-bg {
+    background-color: hsl(var(--soft-bg));
   }
 
   .bg-footer-dark {
     background-color: hsl(var(--footer-dark));
   }
 
-  .text-brand-blue { color: hsl(var(--brand-blue)); }
-  .text-brand-teal { color: hsl(var(--brand-teal)); }
-  .text-brand-yellow { color: hsl(var(--brand-yellow)); }
-  .bg-brand-blue { background-color: hsl(var(--brand-blue)); }
-  .bg-brand-blue-light { background-color: hsl(var(--brand-blue-light)); }
-  .bg-brand-teal { background-color: hsl(var(--brand-teal)); }
-  .bg-brand-yellow { background-color: hsl(var(--brand-yellow)); }
-  .bg-brand-blue\/10 { background-color: hsl(var(--brand-blue) / 0.10); }
-  .bg-brand-teal\/10 { background-color: hsl(var(--brand-teal) / 0.10); }
-  .bg-brand-yellow\/20 { background-color: hsl(var(--brand-yellow) / 0.20); }
-  .bg-brand-blue\/15 { background-color: hsl(var(--brand-blue) / 0.15); }
-  .bg-brand-blue\/20 { background-color: hsl(var(--brand-blue) / 0.20); }
+  /* Semantic colour utilities */
+  .text-brand-navy  { color: hsl(var(--brand-navy)); }
+  .text-brand-teal  { color: hsl(var(--brand-teal)); }
+  .text-brand-brown { color: hsl(var(--brand-brown)); }
+  .text-brand-green { color: hsl(var(--brand-green)); }
 
-  .font-display { font-family: 'Sora', 'Inter', system-ui, sans-serif; }
+  .bg-brand-navy       { background-color: hsl(var(--brand-navy)); }
+  .bg-brand-teal       { background-color: hsl(var(--brand-teal)); }
+  .bg-brand-brown      { background-color: hsl(var(--brand-brown)); }
+  .bg-brand-green      { background-color: hsl(var(--brand-green)); }
+
+  .bg-brand-navy\/10   { background-color: hsl(var(--brand-navy)  / 0.10); }
+  .bg-brand-teal\/10   { background-color: hsl(var(--brand-teal)  / 0.10); }
+  .bg-brand-teal\/20   { background-color: hsl(var(--brand-teal)  / 0.20); }
+  .bg-brand-brown\/10  { background-color: hsl(var(--brand-brown) / 0.10); }
+  .bg-brand-green\/10  { background-color: hsl(var(--brand-green) / 0.10); }
+  .bg-brand-navy\/15   { background-color: hsl(var(--brand-navy)  / 0.15); }
+  .bg-brand-navy\/20   { background-color: hsl(var(--brand-navy)  / 0.20); }
+
+  .font-display { font-family: 'Montserrat', system-ui, sans-serif; }
 }

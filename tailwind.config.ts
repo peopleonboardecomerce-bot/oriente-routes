@@ -65,6 +65,10 @@ export default {
         "soft-bg": "hsl(var(--soft-bg))",
 
       },
+      fontFamily: {
+        display: ["Montserrat", "system-ui", "sans-serif"],
+        body: ["Open Sans", "system-ui", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
