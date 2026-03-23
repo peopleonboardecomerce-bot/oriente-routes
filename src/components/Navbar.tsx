@@ -52,7 +52,7 @@ export default function Navbar() {
             <Zap size={16} strokeWidth={2.5} />
           </span>
           <span className={scrolled ? "text-foreground" : "text-white"}>
-            Oriente<span className="text-brand-teal">Go</span>
+            EnLa<span className="text-brand-teal">Salida</span>
           </span>
         </a>
 
