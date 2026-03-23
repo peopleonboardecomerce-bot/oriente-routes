@@ -7,11 +7,11 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Shield,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, end: true },
@@ -38,18 +38,10 @@ export default function AdminSidebar() {
       )}
     >
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 py-5 border-b border-border">
-        <div
-          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-          style={{ backgroundColor: "hsl(var(--brand-navy))" }}
-        >
-          <Shield className="w-4 h-4 text-white" />
-        </div>
+      <div className="flex items-center gap-3 px-4 py-4 border-b border-border">
+        <img src={logo} alt="EnLaSalida" className={cn("w-auto transition-all duration-200", collapsed ? "h-7" : "h-8")} />
         {!collapsed && (
           <div className="overflow-hidden">
-            <p className="text-sm font-bold text-foreground leading-tight">
-              EnLa<span style={{ color: "hsl(var(--brand-teal))" }}>Salida</span>
-            </p>
             <p className="text-xs text-muted-foreground">Admin Panel</p>
           </div>
         )}

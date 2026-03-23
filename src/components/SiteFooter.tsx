@@ -1,5 +1,6 @@
-import { Zap, Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import logo from "@/assets/logo.png";
 
 const APP_URL = "https://app.enlasalida.com";
 
@@ -68,15 +69,7 @@ export default function SiteFooter() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
-            <span
-              className="flex items-center justify-center w-8 h-8 rounded-lg text-white"
-              style={{ backgroundColor: "hsl(var(--brand-teal))" }}
-            >
-              <Zap size={16} strokeWidth={2.5} />
-            </span>
-            <span className="font-display text-xl font-bold">
-              EnLa<span style={{ color: "hsl(var(--brand-teal))" }}>Salida</span>
-            </span>
+            <img src={logo} alt="EnLaSalida" className="h-9 w-auto" />
           </div>
           <p className="text-white/55 text-sm leading-relaxed max-w-xs">{aboutText}</p>
           <div className="flex gap-3 mt-5">
