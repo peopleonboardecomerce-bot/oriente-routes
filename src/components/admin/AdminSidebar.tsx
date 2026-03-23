@@ -7,11 +7,11 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
-  Shield,
 } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.png";
 
 const nav = [
   { to: "/admin", label: "Resumen", icon: LayoutDashboard, end: true },
