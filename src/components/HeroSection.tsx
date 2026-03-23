@@ -1,6 +1,6 @@
 import heroBg from "@/assets/hero-bg.jpg";
 
-const APP_URL = "https://app.orientego.com";
+const APP_URL = "https://app.enlasalida.com";
 
 export default function HeroSection() {
   return (

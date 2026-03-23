@@ -39,12 +39,17 @@ export default function AdminSidebar() {
     >
       {/* Header */}
       <div className="flex items-center gap-3 px-4 py-5 border-b border-border">
-        <div className="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center flex-shrink-0">
+        <div
+          className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+          style={{ backgroundColor: "hsl(var(--brand-navy))" }}
+        >
           <Shield className="w-4 h-4 text-white" />
         </div>
         {!collapsed && (
           <div className="overflow-hidden">
-            <p className="text-sm font-bold text-foreground leading-tight">OrienteGo</p>
+            <p className="text-sm font-bold text-foreground leading-tight">
+              EnLa<span style={{ color: "hsl(var(--brand-teal))" }}>Salida</span>
+            </p>
             <p className="text-xs text-muted-foreground">Admin Panel</p>
           </div>
         )}
@@ -61,9 +66,14 @@ export default function AdminSidebar() {
               cn(
                 "flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors",
                 isActive
-                  ? "bg-brand-blue/10 text-brand-blue"
+                  ? "text-white"
                   : "text-muted-foreground hover:bg-slate-100 hover:text-foreground"
               )
+            }
+            style={({ isActive }) =>
+              isActive
+                ? { backgroundColor: "hsl(var(--brand-navy))" }
+                : {}
             }
           >
             <Icon className="w-4 h-4 flex-shrink-0" />

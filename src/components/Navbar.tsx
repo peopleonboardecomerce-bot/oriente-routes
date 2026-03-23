@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "Blog",          anchor: "blog" },
 ];
 
-const APP_URL = "https://app.orientego.com";
+const APP_URL = "https://app.enlasalida.com";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function Navbar() {
             <Zap size={16} strokeWidth={2.5} />
           </span>
           <span className={scrolled ? "text-foreground" : "text-white"}>
-            Oriente<span className="text-brand-teal">Go</span>
+            EnLa<span className="text-brand-teal">Salida</span>
           </span>
         </a>
 
@@ -75,7 +75,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-cta"
           >
-            Usar la App
+            Ir a la App
           </a>
         </nav>
 
@@ -107,7 +107,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-cta text-center mt-2"
           >
-            Usar la App
+            Ir a la App
           </a>
         </div>
       )}

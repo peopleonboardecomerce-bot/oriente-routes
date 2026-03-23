@@ -23,9 +23,10 @@ export default function AdminLogin() {
     if (error) {
       toast({
         title: "Error de autenticación",
-        description: error.message === "Invalid login credentials"
-          ? "Correo o contraseña incorrectos."
-          : error.message,
+        description:
+          error.message === "Invalid login credentials"
+            ? "Correo o contraseña incorrectos."
+            : error.message,
         variant: "destructive",
       });
       return;
@@ -36,19 +37,29 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+    <div
+      className="min-h-screen flex items-center justify-center px-4"
+      style={{
+        background: "linear-gradient(135deg, hsl(var(--brand-navy)) 0%, hsl(188 53% 28%) 100%)",
+      }}
+    >
       <div className="w-full max-w-sm">
         {/* Logo / brand */}
         <div className="flex flex-col items-center mb-8">
-          <div className="w-14 h-14 rounded-2xl bg-brand-blue flex items-center justify-center mb-3 shadow-lg">
-            <Shield className="w-7 h-7 text-white" />
+          <div
+            className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 shadow-xl"
+            style={{ backgroundColor: "hsl(var(--brand-teal))" }}
+          >
+            <Shield className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-foreground font-display">OrienteGo Admin</h1>
-          <p className="text-sm text-muted-foreground mt-1">Acceso exclusivo para administradores</p>
+          <h1 className="text-2xl font-bold text-white font-display">EnLaSalida Admin</h1>
+          <p className="text-sm mt-1" style={{ color: "hsl(188 53% 80%)" }}>
+            Acceso exclusivo para administradores
+          </p>
         </div>
 
         {/* Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-border p-8">
+        <div className="bg-white rounded-2xl shadow-2xl border border-white/10 p-8">
           <form onSubmit={handleLogin} className="space-y-5">
             {/* Email */}
             <div className="space-y-1.5">
@@ -62,7 +73,7 @@ export default function AdminLogin() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@orientego.com"
+                  placeholder="admin@enlasalida.com"
                   required
                   className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring transition"
                 />
@@ -98,16 +109,24 @@ export default function AdminLogin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-brand-blue text-white font-semibold py-2.5 rounded-xl hover:bg-brand-blue-light transition-colors disabled:opacity-60 flex items-center justify-center gap-2"
+              className="w-full text-white font-semibold py-2.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg disabled:opacity-60"
+              style={{ backgroundColor: "hsl(var(--brand-navy))" }}
+              onMouseEnter={(e) => !loading && ((e.currentTarget as HTMLButtonElement).style.backgroundColor = "hsl(var(--brand-teal))")}
+              onMouseLeave={(e) => !loading && ((e.currentTarget as HTMLButtonElement).style.backgroundColor = "hsl(var(--brand-navy))")}
             >
-              {loading && <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />}
+              {loading && (
+                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              )}
               {loading ? "Ingresando…" : "Iniciar sesión"}
             </button>
           </form>
         </div>
 
-        <p className="text-center text-xs text-muted-foreground mt-6">
-          ← <a href="/" className="underline hover:text-foreground transition">Volver al sitio público</a>
+        <p className="text-center text-xs mt-6" style={{ color: "hsl(188 53% 75%)" }}>
+          ←{" "}
+          <a href="/" className="underline hover:text-white transition">
+            Volver al sitio público
+          </a>
         </p>
       </div>
     </div>

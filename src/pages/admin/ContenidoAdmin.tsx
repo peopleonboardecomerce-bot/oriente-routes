@@ -22,6 +22,17 @@ const GROUPS = [
     title: "Pasos — Conductores",
     keys: ["paso_conductor_1", "paso_conductor_2", "paso_conductor_3"],
   },
+  {
+    title: "Configuración del Footer",
+    keys: [
+      "footer_about_text",
+      "footer_contact_email",
+      "footer_phone",
+      "footer_facebook",
+      "footer_instagram",
+      "footer_twitter",
+    ],
+  },
 ];
 
 export default function ContenidoAdmin() {
@@ -47,7 +58,9 @@ export default function ContenidoAdmin() {
     setLoading(false);
   }, []);
 
-  useEffect(() => { fetchSettings(); }, [fetchSettings]);
+  useEffect(() => {
+    fetchSettings();
+  }, [fetchSettings]);
 
   const handleSave = async (key: string) => {
     setSaving(key);
@@ -71,7 +84,9 @@ export default function ContenidoAdmin() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground font-display">Editor de Contenido Web</h1>
-          <p className="text-sm text-muted-foreground mt-0.5">Edita los textos del sitio público sin tocar el código</p>
+          <p className="text-sm text-muted-foreground mt-0.5">
+            Edita los textos del sitio público sin tocar el código
+          </p>
         </div>
         <button
           onClick={fetchSettings}
@@ -89,7 +104,10 @@ export default function ContenidoAdmin() {
         </div>
       ) : (
         GROUPS.map((group) => (
-          <div key={group.title} className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden">
+          <div
+            key={group.title}
+            className="bg-white rounded-2xl border border-border shadow-sm overflow-hidden"
+          >
             <div className="px-6 py-3.5 border-b border-border bg-slate-50">
               <h2 className="text-sm font-semibold text-foreground">{group.title}</h2>
             </div>
@@ -122,7 +140,17 @@ export default function ContenidoAdmin() {
                       <button
                         onClick={() => handleSave(key)}
                         disabled={!hasChanged(key) || saving === key}
-                        className="flex items-center gap-1.5 text-xs px-3 py-1.5 bg-brand-blue text-white font-semibold rounded-lg hover:bg-brand-blue-light transition disabled:opacity-40"
+                        className="flex items-center gap-1.5 text-xs px-3 py-1.5 text-white font-semibold rounded-lg transition disabled:opacity-40"
+                        style={{ backgroundColor: "hsl(var(--brand-navy))" }}
+                        onMouseEnter={(e) =>
+                          !(!hasChanged(key) || saving === key) &&
+                          ((e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                            "hsl(var(--brand-teal))")
+                        }
+                        onMouseLeave={(e) =>
+                          ((e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                            "hsl(var(--brand-navy))")
+                        }
                       >
                         {saving === key && (
                           <span className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin" />

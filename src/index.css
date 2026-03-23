@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Design System – OrienteGo "Modern Coastal" ────────────────── */
+/* ─── Design System – EnLaSalida "Modern Coastal" ────────────────── */
 
 @layer base {
   :root {
@@ -109,24 +109,44 @@
 @layer components {
   /* ── Buttons ─────────────────────────────────── */
   .btn-cta {
-    @apply inline-flex items-center gap-2 bg-brand-teal text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    background-color: hsl(var(--brand-teal));
+    color: hsl(0 0% 100%);
   }
+  .btn-cta:hover { opacity: 0.9; }
 
   .btn-cta-hero {
-    @apply inline-flex items-center justify-center gap-2 bg-brand-teal text-white font-bold px-7 py-4 rounded-2xl text-base hover:opacity-90 transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 font-bold px-7 py-4 rounded-2xl text-base transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-1 active:translate-y-0;
+    background-color: hsl(var(--brand-teal));
+    color: hsl(0 0% 100%);
   }
+  .btn-cta-hero:hover { opacity: 0.9; }
 
   .btn-ghost-hero {
     @apply inline-flex items-center justify-center gap-2 bg-white/15 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-4 rounded-2xl text-base hover:bg-white/25 transition-all duration-200;
   }
 
   .btn-cta-secondary {
-    @apply inline-flex items-center gap-2 bg-brand-navy text-white font-bold px-7 py-3.5 rounded-xl text-sm hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 font-bold px-7 py-3.5 rounded-xl text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    background-color: hsl(var(--brand-navy));
+    color: hsl(0 0% 100%);
   }
+  .btn-cta-secondary:hover { opacity: 0.9; }
 
   .btn-cta-conductor {
-    @apply bg-brand-green hover:opacity-90;
+    background-color: hsl(var(--brand-green));
+    color: hsl(0 0% 100%);
   }
+  .btn-cta-conductor:hover { opacity: 0.9; }
+
+  /* Admin action button – solid navy */
+  .btn-admin {
+    @apply inline-flex items-center gap-2 font-semibold px-4 py-2 rounded-xl text-sm transition-all duration-200;
+    background-color: hsl(var(--brand-navy));
+    color: hsl(0 0% 100%);
+  }
+  .btn-admin:hover { background-color: hsl(var(--brand-teal)); }
+  .btn-admin:disabled { opacity: 0.5; pointer-events: none; }
 
   /* ── Nav ─────────────────────────────────────── */
   .bg-nav {
