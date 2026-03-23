@@ -1,5 +1,6 @@
-import { Zap, Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react";
 import { useSiteSettings } from "@/hooks/useSiteSettings";
+import logo from "@/assets/logo.png";
 
 const APP_URL = "https://app.enlasalida.com";
 

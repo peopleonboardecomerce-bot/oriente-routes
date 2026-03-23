@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const NAV_LINKS = [
   { label: "Inicio",        anchor: "inicio" },
