@@ -47,14 +47,9 @@ export default function Navbar() {
         <a
           href="/"
           onClick={(e) => { e.preventDefault(); handleNav("inicio"); }}
-          className="flex items-center gap-2 font-display text-xl font-bold tracking-tight"
+          className="flex items-center gap-2"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand-navy text-white">
-            <Zap size={16} strokeWidth={2.5} />
-          </span>
-          <span className={scrolled ? "text-foreground" : "text-white"}>
-            EnLa<span className="text-brand-teal">Salida</span>
-          </span>
+          <img src={logo} alt="EnLaSalida" className={`h-9 w-auto transition-all duration-300 ${scrolled ? "" : "brightness-0 invert"}`} />
         </a>
 
         {/* Desktop nav */}
