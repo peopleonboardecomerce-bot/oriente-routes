@@ -75,7 +75,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="btn-cta"
           >
-            Usar la App
+            Ir a la App
           </a>
         </nav>
 
