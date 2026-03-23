@@ -37,7 +37,7 @@ const emptyForm = {
   content: "",
   category: "General",
   cover_url: "",
-  author: "Equipo OrienteGo",
+  author: "Equipo EnLaSalida",
   status: "draft" as "draft" | "published",
 };
 

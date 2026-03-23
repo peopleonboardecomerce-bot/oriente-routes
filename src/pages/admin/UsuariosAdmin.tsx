@@ -192,7 +192,7 @@ export default function AdminUsuarios() {
                                   <div key={label} className="bg-white rounded-xl border border-border p-3 text-sm">
                                     <p className="text-xs font-semibold text-muted-foreground mb-1">{label}</p>
                                     {url ? (
-                                      <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-brand-blue hover:underline text-xs">
+                                      <a href={url} target="_blank" rel="noreferrer" className="flex items-center gap-1 text-brand-teal hover:underline text-xs">
                                         Ver documento <ExternalLink className="w-3 h-3" />
                                       </a>
                                     ) : (
