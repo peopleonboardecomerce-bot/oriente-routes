@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { Eye, EyeOff, Lock, Mail, Shield } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
