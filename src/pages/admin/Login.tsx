@@ -47,13 +47,8 @@ export default function AdminLogin() {
       <div className="w-full max-w-sm">
         {/* Logo / brand */}
         <div className="flex flex-col items-center mb-8">
-          <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mb-4 shadow-xl"
-            style={{ backgroundColor: "hsl(var(--brand-teal))" }}
-          >
-            <Shield className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-2xl font-bold text-white font-display">EnLaSalida Admin</h1>
+          <img src={logo} alt="EnLaSalida" className="h-20 w-auto mb-4 drop-shadow-xl" />
+          <h1 className="text-2xl font-bold text-white font-display">Panel de Administración</h1>
           <p className="text-sm mt-1" style={{ color: "hsl(188 53% 80%)" }}>
             Acceso exclusivo para administradores
           </p>
