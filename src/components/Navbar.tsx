@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: "Blog",          anchor: "blog" },
 ];
 
-const APP_URL = "https://app.orientego.com";
+const APP_URL = "https://app.enlasalida.com";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
